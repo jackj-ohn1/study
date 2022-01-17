@@ -36,11 +36,11 @@ git branch 分支名    就会发现github上新增了一个分支。
 
 使用：
 
-git push origin --delete 远程分支名
+git push origin  :远程分支名
 
 来删除远程分支
 
-git branch -d (本地分支名)
+git branch -d (本地分支名),不过得先不在这个本地分支上
 
 来删除本地分支
 
