@@ -54,6 +54,10 @@ git merge 分支名   （是将该分支合并到main/master分支上）
 
 使用git diff 来查看分支文件中的冲突
 
+
+
+
+
 1. 克隆代码
 
 ```text
@@ -111,3 +115,13 @@ git push origin :dev  # 删除远程dev分支，危险命令哦
 git checkout master  # 切换到master分支
 git branch -d dev  # 删除本地dev分
 ```
+
+
+
+#### pull request
+
+先在原仓库fork一个副本，在副本当中进行提交commit，确认无误后再在Github官网上pull request即可
+
+![image-20220121101855598](C:\Users\86158\AppData\Roaming\Typora\typora-user-images\image-20220121101855598.png)
+
+这样代表成功了

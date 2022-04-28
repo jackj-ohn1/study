@@ -1,0 +1,177 @@
+basePath: /api
+definitions:
+  model.User:
+    properties:
+      account:
+        type: string
+      id:
+        type: integer
+      login_time:
+        type: string
+      password:
+        type: string
+    required:
+    - account
+    - password
+    type: object
+  pkg.Resp:
+    properties:
+      code:
+        type: integer
+      data: {}
+      msg:
+        type: string
+    type: object
+host: 124.221.246.5:5500
+info:
+  contact:
+    email: 2105753640@qq.com
+    name: yyj
+  description: '"赚圈圈API"'
+  termsOfService: http://swagger.io/terrms/
+  title: miniproject
+  version: 1.0.0
+paths:
+  /get/file/data:
+    get:
+      consumes:
+      - application/json
+      description: '"获取博文"'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"获取博文"'
+      tags:
+      - blog
+  /get/file/name:
+    get:
+      consumes:
+      - application/json
+      description: '"获取博文名称"'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"获取博文名称"'
+      tags:
+      - blog
+  /post/person/login:
+    post:
+      consumes:
+      - application/json
+      description: '"登录"'
+      parameters:
+      - description: 账号密码
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"登录"'
+      tags:
+      - user
+  /post/person/register:
+    post:
+      consumes:
+      - application/json
+      description: '"登录"'
+      parameters:
+      - description: 账号密码
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"登录"'
+      tags:
+      - user
+  /star/addition:
+    get:
+      consumes:
+      - application/json
+      description: '"收藏"'
+      parameters:
+      - description: star
+        in: query
+        name: star
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"收藏"'
+      tags:
+      - star
+  /star/delete:
+    get:
+      consumes:
+      - application/json
+      description: '"收藏"'
+      parameters:
+      - description: star
+        in: query
+        name: star
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: successfully
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+        "500":
+          description: error happened in server
+          schema:
+            $ref: '#/definitions/pkg.Resp'
+      summary: '"收藏"'
+      tags:
+      - star
+schemes:
+- http
+swagger: "2.0"

@@ -1,0 +1,269 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "\"赚圈圈API\"",
+        "title": "miniproject",
+        "termsOfService": "http://swagger.io/terrms/",
+        "contact": {
+            "name": "yyj",
+            "email": "2105753640@qq.com"
+        },
+        "version": "1.0.0"
+    },
+    "host": "124.221.246.5:5500",
+    "basePath": "/api",
+    "paths": {
+        "/get/file/data": {
+            "get": {
+                "description": "\"获取博文\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "blog"
+                ],
+                "summary": "\"获取博文\"",
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        },
+        "/get/file/name": {
+            "get": {
+                "description": "\"获取博文名称\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "blog"
+                ],
+                "summary": "\"获取博文名称\"",
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        },
+        "/post/person/login": {
+            "post": {
+                "description": "\"登录\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "\"登录\"",
+                "parameters": [
+                    {
+                        "description": "账号密码",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        },
+        "/post/person/register": {
+            "post": {
+                "description": "\"登录\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "user"
+                ],
+                "summary": "\"登录\"",
+                "parameters": [
+                    {
+                        "description": "账号密码",
+                        "name": "user",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        },
+        "/star/addition": {
+            "get": {
+                "description": "\"收藏\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "star"
+                ],
+                "summary": "\"收藏\"",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "star",
+                        "name": "star",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        },
+        "/star/delete": {
+            "get": {
+                "description": "\"收藏\"",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "star"
+                ],
+                "summary": "\"收藏\"",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "star",
+                        "name": "star",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successfully",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    },
+                    "500": {
+                        "description": "error happened in server",
+                        "schema": {
+                            "$ref": "#/definitions/pkg.Resp"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "model.User": {
+            "type": "object",
+            "required": [
+                "account",
+                "password"
+            ],
+            "properties": {
+                "account": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "login_time": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "pkg.Resp": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "data": {},
+                "msg": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
